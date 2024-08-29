@@ -29,7 +29,7 @@ const images = [
     const collection = images.map((element) => {
     const item = document.createElement('li');
     listItem.append(item);
-    const img = document.createElement('image');
+    const img = document.createElement('img');
     item.append(img);
     img.setAttribute("src", element.url); 
     img.setAttribute("alt", element.alt);
