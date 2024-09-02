@@ -20,11 +20,11 @@ const createBoxes = (amount) => {
     if(amount < 1 || amount > 100){
         return;
     };
-    console.log(amount);
+    
     inputEl.value = '';
     boxsEl.innerHTML = '';
     let size = 30;
-    
+
     for (let i = 0; i <= amount; i++) {
         
         const boxDiv = document.createElement('div');

@@ -8,4 +8,3 @@ const inputValue = (event) => {
 }; 
 
 takeInput.addEventListener("input", inputValue);
-
