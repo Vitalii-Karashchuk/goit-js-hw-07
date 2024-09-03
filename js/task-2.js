@@ -29,7 +29,6 @@ const images = [
 const listItem = document.querySelector('.gallery');
   const collection = images.map((element) => {
     const item = document.createElement('li');
-    listItem.append(item);
     const img = document.createElement('img');
     item.append(img);
     img.setAttribute("src", element.url); 
@@ -38,5 +37,6 @@ const listItem = document.querySelector('.gallery');
     img.style.height = "100px";
     return item;
   });
-  
+
+  listItem.append(...collection);
   console.log(listItem);

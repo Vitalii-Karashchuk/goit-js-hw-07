@@ -15,29 +15,28 @@ const destroyBoxes = () => {
     boxsEl.innerHTML = '';
 };
 
-const createBoxes = (amount) => {
-    amount = inputEl.value;
+const createBoxes = () => {
+    const amount = Number(inputEl.value);
     if(amount < 1 || amount > 100){
         return;
     };
-    
-    inputEl.value = '';
     boxsEl.innerHTML = '';
+    const fragment = document.createDocumentFragment()
     let size = 30;
 
-    for (let i = 0; i <= amount; i++) {
+    for (let i = 0; i < amount; i++) {
         
         const boxDiv = document.createElement('div');
         const currentColor = getRandomHexColor();
         boxDiv.style.backgroundColor = currentColor;
         boxDiv.style.width = `${size}px`;
         boxDiv.style.height = `${size}px`;
-        boxsEl.appendChild(boxDiv);
+        fragment.appendChild(boxDiv);
         
         size += 10;
     };
-    
-        
+    inputEl.value = '';
+    boxsEl.appendChild(fragment); 
 };
 
 btnCreateEl.addEventListener('click', createBoxes);
